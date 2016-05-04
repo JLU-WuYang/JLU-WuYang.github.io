@@ -1,0 +1,61 @@
+#index_header{
+list-style-type:none;
+float:right;
+}
+.top{
+display:inline;
+background-color:gray;
+padding:0px 20px 0px 20px;
+margin:0px 70px 0px 70px;
+
+
+}
+#index_naver{
+position:fixed;
+left:250px;
+background-color:gray;
+height:40px;
+padding-top:10px;
+padding-bottom:10px;
+opacity:0.8;
+}
+
+a{
+ text-decoration: none;
+}
+a:link{
+color:black;
+}
+a:visited{
+color:black;
+}
+a:hover{
+color:white;
+}
+body{
+background-image:url(background.jpg)
+}
+#index_main{
+margin-top:30px;
+
+}
+.index_blog{
+background:gray;
+opacity:0.8;
+padding:20px 0px 20px 20px;
+margin:30px 0px 30px 20px;
+}
+
+#uploadphoto{
+
+position:absolute;
+top:200px;
+left:400px;
+
+}
+footer{
+position:absolute;
+top:500px;
+left:500px;
+color:white;
+}
