@@ -1,8 +1,11 @@
-code{
+.code{
 font-family: "courier New";
 font-weight: bloder;
-font-size:1.2em;
-color:purple;
+color: cadetblue;
+background-color:black;
+margin: 0px 100px 0px 20px;
+padding: 10px 10px 10px 50px;
+font-size: 15px;
 }
 
 h1{
@@ -14,9 +17,8 @@ line-height:1.5em;
 font-size:medium;
 }
 #main{
-padding:20px 20px 20px 20px;
-margin-left:auto;
-margin-right:auto;
+padding:20px 50px 20px 50px;
+margin:20px 50px 20px 50px;
 }
 header{
 text-align:center;
