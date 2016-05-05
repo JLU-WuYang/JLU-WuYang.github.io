@@ -1,0 +1,139 @@
+﻿<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>机器学习之BP神经网络</title>
+	<link type="text/css" rel="stylesheet" href="../naver.css">
+	<link type="text/css" rel="stylesheet" href="../css/article.css">
+		<link rel="icon" href="../image/logo.png">
+	</head>
+	
+    <body>
+	<div id="naver">
+		<img src="../image/logo.png" height="70px">
+		<ul id="naver_header">
+		<li class="top" ><a href="../index.html" class="top1" title="HOME"><img src="../image/home.png"></a></li>
+		<li class="top"><a href="blog.html" class="top1"title="BLOG"><img src="../image/blog.png"></a></li>
+		<li class="top"><a href="aboutme.html" class="top1"title="ABOUT ME"><img src="../image/aboutme.png"></a></li>		
+
+		</ul>	
+	</div>
+<div id="main" class="blog">
+<br><br>
+      <h1>机器学习之BP神经网络</h1>
+      <ul>
+          <li><a href="#1">术语--中英<a></li>
+          <li><a href="#2">统计学习</a></li>
+          <li><a href="#3">机器学习的分类</a>
+          <ul>
+              <li><a href="#3.1">监督学习</a></li>
+              <li><a href="#3.2">无监督学习</a></li>
+              <li><a href="#3.3">半监督学习</a></li>
+              
+          </ul>   
+          </li>
+          <li><a href="#4">BP神经网络</a>
+         
+              <ul>
+                  <li><a href="#4.1">神经网络的历史</a></li>
+                  <li><a href="#4.2">What's is BP</a></li>
+                  
+              </ul>
+              
+              
+          </li>
+      </ul>  
+      <h2 id="1">术语--中英</h2>
+      <p>
+          <ul>
+          <li>统计学习        statistical learning</li>
+          <li>统计机器学习    statistial machine learning</li>
+          <li>监督学习        supervised learning</li>
+          <li>非监督学习      unsupervised learning</li>
+          <li>半监督学习      semi-supervised learning</li>
+          <li>强化学习        reinforcement learning</li>
+          <li>训练数据        training data</li>
+          <li>假设空间        hypothesis space</li>
+          <li>评价准则        evaluation criterion</li>
+          </ul>
+      </p>
+      <h2 id="2">统计学习</h2>
+        <p>
+        统计学习，也称统计机器学习，当前人们提到机器学习往往指统计机器学习。
+        统计学习的三要素:模型，策略与方法。<br>
+        简单来说，模型（model）是包含所有可能的假设空间（条件分布或决策函数），策略（strategy）是模型选择的准则，算法（algorithm）是模型学习的算法。
+        统计学习一般步骤：
+        <ol>
+            <li>得到一个有限的数据训练集(training data)</li>
+            <li>确定包含所有可能得模型的假设空间</li>
+            <li>确定模型选择的准则即学习的策略</li>
+            <li>实现求解最优模型的算法即学习的算法</li>
+            <li>通过学习方法选择最优模型</li>
+            <li>利用最优模型对新数据预测和分析</li>
+                
+        </ol> 
+        
+        </p>
+       <h2 id="3">机器学习的分类</h2>
+       <h3 id="3.1">监督学习</h3>
+       <p>监督学习中对于数据集中的每一个数据都有相应的正确答案。<br>
+        <strong>Supervised Learning</strong><br>
+        Given the 'right answer ' for each example in the data<br>
+        Regression Problem<br>
+        Predict real-valued output</p>
+        <h3 id="3.2">无监督学习</h3>
+        <p>无监督学习（unsupervised Learnin）我们只有一个数据集，没人告诉我们那是什么，也不知道代表什么，如聚类（clustering）问题。</p>
+        <h3 id="3.3">半监督学习</h3>
+        <p>半监督学习有两个样本集,一个有标记,一个没有标记。只用有标记的可以生成有监督算法，只用无标记的可以生成无监督算法，两者都使用,
+            我们希望在有标记中加入无标记样本,增强有监督分类的效果;同样的,我们希望在无标记中加入有标记样本,增强无监督聚类的效果。一般而言,半监督学习侧重于在有监督的分类算法中加入无标记样本来实现半监督分类。
+            也就是在监督学习中加入无标记样本,增强分类效果。</p>
+        <h2 id="4">BP神经网络</h2>
+        <h3 id="4.1">神经网络的历史</h3>
+        <p>
+            20世纪40年代，随着神经科学的发展，人们对大脑的结构和神经元了解越来越充分，研究人员开始模仿大脑的机理和结构实现一些具有大脑识别和记忆功能的算法。
+            1943年心理学家W.McCulloch和数学家W.Pitts提出了第一个人工神经元模型（模型），采用简化了的信号传播机制来模仿人类大脑神经元的一些基本功能，从而奠定了早期神经计算发展的基础。
+            1958年，Rosenblatt在模型的基础上，增加了学习机制，提出了感知器模型（用来解决字符识别领域的一些问题，第一次将人工神经网络理论应用到实际问题当中，并且证明了两层感
+            知器构成的网络能够对输入进行线性分类操作，并且提出了带有隐藏层感知器单元的这一非常重要的研究方向。后来Hopfield为了解决从图像碎片中提取出完整的图像，于年提出了Hopfield
+            神经网络模型（Hopfield Network）重新激发了人们研究人工神经网络的热情。模型不仅对人工神经网络的信息存储和提取功能进行了非线性 数据概括，并且通过提出动力方程和学习算法的方程，对网络算法提供了重要公
+            式和参数等，为以后人工神经网络的构造和学习提供了理论基础。随后在1986年，Rumelhart等人提出了并行分布处理理论，同时详细分析了用于具有非线性转移函数的多层前馈网络（又称BP网络）
+            的误差反向传播算法（算法），解决了感知器模型所无法解决的线性不可分的样本的分类问题，而且给多层前馈网络提供了相对成熟权值调整的有效算法。在带动人工神经网络的进入蓬勃发展阶段的同时，BP算法也
+            成为了目前最受关注，应用最广的人工神经网络算法之一。<br>左图为MP模型，右图为Hopfield Network<br>
+
+            <img src="http://hahack.com/images/ann1/BGCSG.png" width="30%">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Hopfield-net.png/220px-Hopfield-net.png"><br>
+            
+         </p>
+         <h3 id="4.2">What's BP</h3>
+             <p>
+                 BP神经网络全称为多层前馈神经网络即Backpropagation Network，其应用了误差反向传播算法。
+                 神经网络分为三部分，输入层，隐藏层和输出层。神经网络由神经元构成，这里的神经元相当于MP模型中的，只不过增加了激活函数，常见的激活函数有S型函数。<br>
+                 我们下面根据统计学习基本步骤分析一下BP神经网络：<br>
+                 <ol>
+                     <li>得到训练集training data</li>
+                     <li>BP神经网络中参数为w与b，所有w与b的组合构成模型假设空间</li>
+                     <li>学习策略为挑选使训练集CostFunction最小的模型即通过最小化训练集的经验函数得到模型</li>
+                     <li>学习算法用到梯度下降法和BP算法</li>
+                     <li>通过测试集的测试结果选择最优模型</li>
+                     <li>利用最优模型进行测试</li>
+                     
+                 </ol>
+             </p>
+             References:
+             <ul>
+                 <li>许可  卷积神经网络在图像识别上的应用的研究 </li>
+                 <li>李航 统计学习方法</li>
+             </ul>
+             
+             </div>
+
+<footer>
+
+&copy;2016, 吴洋<br>
+E-mail:albertwyjoy@gmail.com
+</footer>
+    </body>
+
+
+
+
+
+</html>
