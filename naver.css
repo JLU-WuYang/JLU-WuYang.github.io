@@ -1,0 +1,31 @@
+#naver_header{
+list-style-type:none;
+float:right;
+}
+.top{
+display:inline;
+background-color:gray;
+padding:0px 20px 0px 20px;
+margin:0px 70px 0px 30px;
+
+
+}
+#naver{
+position:fixed;
+left:23%;
+background-color:gray;
+opacity:0.8;
+z-index: 99;
+}
+.top1{
+ text-decoration:none;
+}
+.top1:link{
+color:black;
+}
+.top1:visited{
+color:black;
+}
+.top1:hover{
+color:white;
+}

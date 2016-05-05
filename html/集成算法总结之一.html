@@ -2,20 +2,21 @@
 	<head>
 	<meta charset="UTF-8">
 	<title>集成算法总结之一</title>
-	<link type="text/css" rel="stylesheet" href="blog.css">
-	<link type="text/css" rel="stylesheet" href="article.css">
-	<link rel="icon" href="logo.png">
+	<link type="text/css" rel="stylesheet" href="../naver.css">
+	<link type="text/css" rel="stylesheet" href="../css/article.css">
+		<link rel="icon" href="../image/logo.png">
 	</head>
-	<div id="index_naver">
-		<img src="logo.png" height="50">
-		<ul id="index_header">
-		<li class="top" ><a href="index.html" class="naver">HOME</a></li>
-		<li class="top"><a href="blog.html" class="naver">BLOG</a></li>
-		<li class="top"><a href="aboutme.html" class="naver">ABOUT ME</a></li>		
+	
+    <body>
+	<div id="naver">
+		<img src="../image/logo.png" height="70px">
+		<ul id="naver_header">
+		<li class="top" ><a href="../index.html" class="top1" title="HOME"><img src="../image/home.png"></a></li>
+		<li class="top"><a href="blog.html" class="top1"title="BLOG"><img src="../image/blog.png"></a></li>
+		<li class="top"><a href="aboutme.html" class="top1"title="ABOUT ME"><img src="../image/aboutme.png"></a></li>		
 
 		</ul>	
 	</div>
-<body>	
 <div id="main" class="blog">
 <br><br>
 <h1>集成算法总结之一</h1>
@@ -42,7 +43,8 @@ hard-to-classify examples.
 </ol>
 让我们看一下伪代码
 
-<pre><code>
+<div class="code">
+    <pre>
     U=(1/n,....,1/n)//样本权重
     for(j=1;j<T;j++){
     hj=P(x,y,U);//生成预测函数
@@ -60,7 +62,8 @@ hard-to-classify examples.
     for(int i=1;i<=n;i++)
       Ui=Ui/Sum(Ui);//使总和为1 The trick is used usually when we deal with probability problem. 
     }  
-</code></pre>
+    </pre>
+</div>
 <br>
  输出为预测函数列(h1,h2,h3...hT)与对应权值(w1,w2,w3,...wT)
 最终预测为H=sign(sum(wi*hi(xi)--i))  

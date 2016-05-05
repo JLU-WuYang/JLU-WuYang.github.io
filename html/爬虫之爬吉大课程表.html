@@ -1,0 +1,104 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>爬虫之爬吉大课程表</title>
+	<link type="text/css" rel="stylesheet" href="../naver.css">
+	<link type="text/css" rel="stylesheet" href="../css/article.css">
+		<link rel="icon" href="../image/logo.png">
+	</head>
+	
+    <body>
+	<div id="naver">
+		<img src="../image/logo.png" height="70px">
+		<ul id="naver_header">
+		<li class="top" ><a href="../index.html" class="top1" title="HOME"><img src="../image/home.png"></a></li>
+		<li class="top"><a href="blog.html" class="top1"title="BLOG"><img src="../image/blog.png"></a></li>
+		<li class="top"><a href="aboutme.html" class="top1"title="ABOUT ME"><img src="../image/aboutme.png"></a></li>		
+
+		</ul>	
+	</div>
+<div id="main" class="blog">
+<br><br>
+<h1>爬虫之爬吉大课程表</h1>
+        <p>前一段时间刚学爬虫时，爬了一下吉大教务管理系统，不过仅仅做到模拟登陆，发现帐号明文，但是密码进行加密。
+            对于其他内容，发现view source 时，没有什么东西，也就是说那些是动态内容，今天又编了一下程序，技巧不多，但是
+            对于经验可以让看的人少走一些弯路。
+            下面开始正题。        
+        </p>
+        <p>
+            打开Google浏览器，输入网址进入教务系统主页（好像碰到过login，logout和security几个网页）并打开开发者模式（F12），
+            <br><img src="../image/爬虫之爬吉大课程表/1.jpg" class="image" width="80%"><br>
+            输入帐号密码，并在<strong>自动登录</strong>选项勾选<strong>一天之内</strong>,点击登录，这时候你会发现在，network中
+            出现一列元素，这列元素其实就是你的浏览器与服务器Get和Post得到的东西。
+            <br><img src="../image/爬虫之爬吉大课程表/2.jpg" class="image"><br>
+            你会发现有些元素你认识比如html和css，还有一些js，png，gif。。现在你可能懂一点我上句话。
+            
+        </p>
+        <p>
+            现在开始瞄准我们的目标，课程表，你打开显示课程表的网页，view source 时会发现，没有关于课程表的东西，这是为什么？别急，接下来，打开elements，逐个排查，发现了课表的信息。
+            <br><img src="../image/爬虫之爬吉大课程表/3.jpg" class="image"><br>
+            这说明是有的，只是不在html中，说明课程表的内容是动态生成的。接下来再切换到network，点击每个元素（图片，css什么的就不需要了），
+            看一下preview，你会发现在res.do中有相关信息（注意，res.do有好几个，都是相关信息，我们只需找到有课程表详细的那个就好），
+            <br><img src="../image/爬虫之爬吉大课程表/5.jpg" class="image"><br>preview中层次信息有用，比较直观的展示数据层次结构，便于编代码解析数据。
+            换到Header把Request Header信息copy下来，整理成字典，赋给header，这个地方一定注意一下，Host，Origin，Referer
+            得填上，教务系统会check一下，否则可能会这个错误。<br><img src="../image/爬虫之爬吉大课程表/6.jpg" class="image"><br>
+            做完之后，结果会是这个情况，<br><img src="../image/爬虫之爬吉大课程表/7.jpg" class="image"><br>一堆莫名奇妙的东西，这时，你可以把他们copy一下，变成一个html文件，
+            打开发现是，<br><img src="../image/爬虫之爬吉大课程表/8.jpg" class="image"><br><strong>org.apache.struts2.json.JSONException: Input string is not well formed JSON (invalid char a)</strong>
+            这条错误，什么原因？原因就是我们post的数据不是json格式的。解决一下，import json，用json.dumps函数，转变一下我们
+            的data，然后运行代码，发现结果出来了，剩下的只需json.loads把返回结果变成字典分析即可。
+        </p>
+        
+           <div class="code">
+               <pre>
+              # -*- coding: utf-8 -*-
+"""
+Created on Wed Apr 06 23:35:05 2016
+
+@author: Administrator
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Apr 03 23:18:29 2016
+
+@author: Albert
+"""
+
+# -*- coding:utf-8 -*-
+
+import json
+import requests
+loginUrl = 'http://uims.jlu.edu.cn/ntms/service/res.do'
+postdata =json.dumps( {"tag":"teachClassStud@schedule","branch":"default","params":{"termId":**,"studId":**}})
+cookie={"loginPage":"userLogin.jsp", "pwdStrength":"*", "alu":"*****", "alp":"*****", 
+"ald":"day","JSESSIONID":"******"}
+header= {"user-agent":" Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) 
+Chrome/49.0.2623.110 Safari/537.36" ,"Content-Type":"application/json","Host":"uims.jlu.edu.cn",
+"Origin":"http://uims.jlu.edu.cn","Referer":"http://uims.jlu.edu.cn/ntms/index.do","Content-Length":"92"}
+html = requests.post(url = loginUrl, cookies= cookie,data=postdata,headers=header)
+print html.content
+json_content=html.content
+data=json.loads(json_content)
+for i in xrange(len(data['value'])):
+   print "--------------------%d---------------------"%(1+i)
+   print data['value'][i]['teachClassMaster']['lessonSegment']['fullName']#上课名称
+   print data['value'][i]['teachClassMaster']['lessonSchedules'][0]['classroom']['fullName']#地点
+   print data['value'][i]['teachClassMaster']['lessonTeachers'][0]['teacher']['name']#老师名字
+   for j in xrange(len(data['value'][i]['teachClassMaster']['lessonSchedules'])): 
+       print data['value'][i]['teachClassMaster']['lessonSchedules'][j]['timeBlock']['name']#上课时间
+   
+  
+
+ </pre>
+           </div> 
+        
+        <p>结果是这样<img src="../image/爬虫之爬吉大课程表/result.jpg">,代码中对dict的解析过程都是通用的，不过上面的数据需要修改。</p>
+                 </div>
+           <footer>
+&copy;2016, 吴洋<br>
+E-mail:albertwyjoy@gmail.com
+</footer>  
+    </body>
+    
+    
+</html>

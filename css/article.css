@@ -8,25 +8,20 @@ padding: 10px 10px 10px 50px;
 font-size: 15px;
 }
 
-h1{
-border-bottom: 1px solid black;
+.blog{
+background:white;
+
+padding:20px 20px 20px 20px;
+margin:30px 100px 30px 100px;
 
 }
-body{
-line-height:1.5em;
-font-size:medium;
-}
+
 #main{
 padding:20px 50px 20px 50px;
-margin:20px 50px 20px 50px;
+margin:20px 5% 20px 50px;
+z-index:-1;
 }
-header{
-text-align:center;
-font-size:30px;
-background-color:;
-padding:20px 50px 20px 50px;
-margin-bottom:20px;
-}
+
 footer{
 float:bottom;
 text-align:center;
@@ -35,14 +30,8 @@ color:white;
 }
 h1{
 text-align:center;
+border-bottom: 1px solid black;
 }
-#photo{
-position:fixed;
-left:200px;
-top:100px;
-}
-
-#main{
-z-index:-1;
-
+body{
+background-color:black;
 }
