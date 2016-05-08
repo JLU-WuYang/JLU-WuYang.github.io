@@ -11,22 +11,13 @@ background-repeat:no-repeat;
 background:gray;
 opacity:0.8;
 padding:20px 10% 20px 20px;
-margin:30px 35% 30px 5%;
-right:100px;
+margin:30px 30% 30px 5%;
 }
 
 div.one_blog:hover{
 
 
 margin:30px 33% 30px 6%;
-}
-#kind{
-float:right;
-background: gray;
-width:25%;
-margin-right: 3%;
-margin-top: 2%;
-height: 50%;
 }
 
 footer{
