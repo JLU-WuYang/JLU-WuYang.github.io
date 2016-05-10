@@ -13,7 +13,7 @@ color:white;
 }
 
 body{
-background-image:url(http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1205/16/c2/11636298_1337141644195.jpg)
+background-image:url("../image/aboutme/back.jpg")
 }
 #index_main{
 margin-top:30px;
