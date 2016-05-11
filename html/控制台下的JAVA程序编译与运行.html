@@ -1,0 +1,60 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>控制台下的JAVA程序编译与运行</title>
+	<link type="text/css" rel="stylesheet" href="../naver.css">
+	<link type="text/css" rel="stylesheet" href="../css/article.css">
+		<link rel="icon" href="../image/logo.png">
+	</head>
+	
+    <body>
+	<div id="naver">
+		<img src="../image/logo.png" height="70px">
+		<ul id="naver_header">
+		<li class="top" ><a href="../index.html" class="top1" title="HOME"><img src="../image/home.png"></a></li>
+		<li class="top"><a href="blog.html" class="top1"title="BLOG"><img src="../image/blog.png"></a></li>
+		<li class="top"><a href="aboutme.html" class="top1"title="ABOUT ME"><img src="../image/aboutme.png"></a></li>		
+
+		</ul>	
+	</div>
+<div id="main" class="blog">
+<a href="#main"><img id="up" src="../image/article/up.png"></a>
+<br><br><br>
+<h1>控制台下的JAVA程序编译与运行</h1><h3 class="articlekind">类别：<a href="JAVA.html" class="akind" >JAVA</a></h3>
+        之前一直在IDE环境下，编写包与类运行正常，但到控制台下出现各种问题，比如未识别的标识符，找不到符号，
+        类载入错误的情况。<br>
+        解决方法：<br>
+        <ul>
+            <li>一个文本里只能写一个主类的（即public class XXX），分开写几个类又或则将其他类（除主类的其他类）的public去掉 </li>
+            <li>将几个类都编译，用javac *.java，然后java 主类</li>
+        </ul>
+        原因：<br>
+        <ul>
+            <li>每个编译单元（文件）都只能有一个public类。这表示，每个编译单元都有单一的公共接口，用public类来表现。该接口可以按要求包含众多的支持包访问权限的类。如果在某个编译单元内有一个以上的public类，编译器就会给出出错信息。</li>
+            
+        </ul>
+        关于文件名与类名：<br>
+        <ul>
+            <li>Java保存的文件名必须与类名一致</li>
+            <li>如果文件中只有一个类，文件名必须与类名一致</li>
+            <li>一个Java文件中只能有一个public类</li>
+            <li>如果文件中不止一个类，文件名必须与public类名一致</li>
+            <li>如果文件中不止一个类，而且没有public类，文件名可与任一类名一致</li>
+        </ul>
+        关于编码 GBK 的不可映射字符错误：<br>
+        <ul>
+            <li>首先记事本打开java源文件</li>
+            <li>然后另存为，选择ANSI编码</li>
+            <li>覆盖，编译</li>
+        </ul>
+</div>
+   <footer>
+
+&copy;2016, 吴洋<br>
+E-mail:albertwyjoy@gmail.com
+</footer>
+  
+
+</body>
+
+</html>
