@@ -1,0 +1,70 @@
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>\n与endl的区别</title>
+	<link type="text/css" rel="stylesheet" href="../naver.css">
+	<link type="text/css" rel="stylesheet" href="../css/article.css">
+		<link rel="icon" href="../image/logo.png">
+	</head>
+	
+    <body>
+	<div id="naver">
+		<img src="../image/logo.png" height="70px">
+		<ul id="naver_header">
+		<li class="top" ><a href="../index.html" class="top1" title="HOME"><img src="../image/home.png"></a></li>
+		<li class="top"><a href="blog.html" class="top1"title="BLOG"><img src="../image/blog.png"></a></li>
+		<li class="top"><a href="aboutme.html" class="top1"title="ABOUT ME"><img src="../image/aboutme.png"></a></li>		
+
+		</ul>	
+	</div>
+<div id="main" class="blog">
+<a href="#main"><img id="up" src="../image/article/up.png"></a>
+<br><br><br>
+      <h1>\n与endl的区别</h1><h3 class="articlekind">类别：<a href="C++.html" class="akind" >C++</a></h3>
+<p>1、"\n"是C中的控制符，表示换行，可作为一个字符进行操作（等于，不等于的比较)，而endl是C++中的行结束符，只能用于输出流中。</p>
+<p>2、在UNIX换行为"\n"，在DOS/Win下是\r\n，用endl写的程序具有可移植性，在UNIX下它是"\n"，在DOS\Win是\r\n。</p>
+<div class="code"><pre>
+    ostream.h
+    ......
+    ..endl(ostream&os){os&lt;&lt;'\n'&lt;&lt;flush;}
+    ......
+    </pre></div>
+    
+ <p>3、cout<<"It's right"<<endl;<br>
+ 打印句子并且cout将自己缓冲区清空<br>
+ cout<<"It's right"<<"\n";<br>
+ 某些情况下不能打印要求内容，因为他们还在cout缓冲区</p>
+ 
+ <p>4、endl比"\n"多一个刷新流里的缓冲的flush操作<br>
+ 以文件输出流为例：<br>
+ 当流缓冲区未满时写入"\n"不会马上写到文件里去，但当endl会强行把缓冲区内容写入文件中。<br>
+ iostream这里用了一个技巧，重载<<操作符,<<((ostream&*f)(ostream&)),当执行&lt;&lt;endl时调用了endl()函数</p>
+ 
+ 附："\n"与"\r"区别：<br>
+ \n  换行（Line Feed） 换一行，下移一行<br>
+ \r  回车（Carriage Return） 定位在左边界（行首）<br>
+ <br>
+ "\n" 换行，换到当前位置下一行，而不会回到行首<br>
+ "\r" 回车，回到当前行行首，如果接着输出，本行内容会依次覆盖<br>
+ <br>
+ UNIX: 每行结尾为"\n"<br>
+ Windows:每行结尾为"\r\n"<br>
+ Mac:每行结尾为"\r"<br>
+ UNIX/Mac 文件在Windows打开，文字会变为一行，Windows文件在UNIX/Mac打开会在每行结尾多出^M符号。
+ 实验：Windows下用wb方式写"\n"，用txt打开会发生错乱。用"w"则不会。<br>
+ "\r\n"与"\n\r"实验效果一样。<br><br>
+ 
+ References：
+ <ul>
+     <li>The C++ programming language</li>
+     <li>源码</li>
+     <li><a href="http://www.cnblogs.com/TenosDoIt/p/3733243.html">c/c++ 输入输出缓冲区</a></li>
+     <li><a href="http://blog.csdn.net/wytbno/article/details/51004448">Python之'\r'</a></li>
+ </ul>
+      </div>
+<footer>
+
+&copy;2016, 吴洋<br>
+E-mail:albertwyjoy@gmail.com
+</footer>
+    </body>
