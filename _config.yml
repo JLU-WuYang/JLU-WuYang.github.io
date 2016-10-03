@@ -1,5 +1,5 @@
-title:            Site Title
-description:      Describe your website here.
+title:            Amzing Lab
+description:      莫道君行早，更有早行人。全新敲代码，天道必酬勤。
 disqus_shortname: 
 reading_time:     true
 words_per_minute: 200
@@ -9,14 +9,14 @@ url:
 
 # Owner/author information
 owner:
-  name:           Your Name
+  name:           吴洋
   avatar:         lulu.jpg
   bio:            "做一个有用的人，做一个有趣的人"
   email:          albertwyjoy@email.com
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
   facebook:       
-  github:         https://github.com/JLU-WuYang
+  github:         JLU-WuYang
   stackexchange:  
   linkedin:       
   instagram:      
