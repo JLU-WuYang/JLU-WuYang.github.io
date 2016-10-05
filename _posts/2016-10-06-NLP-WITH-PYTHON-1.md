@@ -42,7 +42,7 @@ be_glad  am _glad
 #需安装Numpy的Matplotlib包
 >>>text4.dispersion_plot(["citizens","freedom"])
 ```
-![dispersion_plot]("../images/dispersion_plot.png")
+![dispersion_plot](../images/dispersion_plot.png)
 - 计数词汇
 1.统计词汇数（计入重复词汇）
 ```python
