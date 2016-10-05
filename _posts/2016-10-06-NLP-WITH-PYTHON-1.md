@@ -3,7 +3,7 @@ layout: post
 title: NLP WITH PYTHON 1
 description: "NLP WITH PYTHON的读书笔记"
 modified: 2016-10-06
-tags: [NLP，Python，读书笔记]
+tags: [NLP,Python,读书笔记]
 image:
   feature: abstract-3.jpg
   credit: dargadgetz
