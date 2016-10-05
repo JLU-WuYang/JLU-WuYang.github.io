@@ -42,7 +42,7 @@ be_glad  am _glad
 #需安装Numpy的Matplotlib包
 >>>text4.dispersion_plot(["citizens","freedom"])
 ```
-![dispersion_plot]("../img/dispersion_plot.png")
+![dispersion_plot]("../images/dispersion_plot.png")
 - 计数词汇
 1.统计词汇数（计入重复词汇）
 ```python
@@ -105,7 +105,7 @@ def word_percentage(word,text):
 - **num (int)** - The maximum number of samples to plot (default=50). Specify num=0 to get all samples (slow).
 重点解释一下**cumulative**： 
 该参数指明是否累积，若为**True**则把samples的比例累加起来显示，频率图中不会显示单个词的比例，如下图左；若为**False**则显示会显示单个词的比例，如下图右；
-![cumulative_True](../img/cumulative_True.png) ![cumulative_False](../img/cumulative_False.png)  
+![cumulative_True](../images/cumulative_True.png) ![cumulative_False](../images/cumulative_False.png)  
 
 10.通过长度和频度进行单词选择
 ```python
