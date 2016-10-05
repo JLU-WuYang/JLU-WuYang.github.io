@@ -100,12 +100,13 @@ def word_percentage(word,text):
 ```
 解释plot参数的含义
 **Parameters:**
-- **title (str) **- The title for the graph
+- **title (str)**- The title for the graph
 - **cumulative** - A flag to specify whether the plot is cumulative (default = False)
 - **num (int)** - The maximum number of samples to plot (default=50). Specify num=0 to get all samples (slow).
 重点解释一下**cumulative**： 
 该参数指明是否累积，若为**True**则把samples的比例累加起来显示，频率图中不会显示单个词的比例，如下图左；若为**False**则显示会显示单个词的比例，如下图右；
-![cumulative_True](cumulative_True.png) ![cumulative_False](cumulative_False.png)
+![cumulative_True](cumulative_True.png) ![cumulative_False](cumulative_False.png)  
+
 10.通过长度和频度进行单词选择
 ```python
 >>>fdist5=FreqDist(text5)
@@ -126,7 +127,7 @@ def word_percentage(word,text):
 ####FreqDist总结
 
 | 例子        | 描述  |
-| --------   |::------: |
+| --------   |------|
 | fdist = FreqDist(samples)    |  创建包含给定样本的频率分布|
 |fdist.inc(sample)         |   增加样本   |
 | fdist['monstrous']       |    计数给定样本出现的次数    |
@@ -139,10 +140,11 @@ def word_percentage(word,text):
 |fdist.plot()|绘制频率分布图|
 |fdist.plot(cumulative=True)|绘制累积频率分布图|
 |fdist1 < fdist2|测试样本在fdist1 中出现的频率是否小于fdist2|
-
- ####关于字符串的判断函数总结
+ 
+ 
+####关于字符串的判断函数总结
 | 函数        | 含义  |
-| --------   |::------: |
+| --------   |------|
 | s.startswith(t)| 	测试s是否以t 开头| 
 | s.endswith(t)| 	测试s是否以t 结尾| 
 | t in s| 	测试t是否是s的子串| 
