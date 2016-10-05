@@ -11,7 +11,7 @@ image:
 ---
 ## NLP WITH PYTHON NOTEBOOK
 ### 第一章 语言处理与Python
-** Python 环境 ： NTLK  **  
+**Python 环境 ： NTLK**  
 ####  NTLK使用总结
 - 下载数据  
 ``` python
