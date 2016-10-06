@@ -171,11 +171,11 @@ def word_percentage(word,text):
 ```
 
 
-####FreqDist总结
+#### FreqDist总结
 
 
 | 例子        | 描述  |
-| --------   |------|
+| --------   |:------::|
 | fdist = FreqDist(samples)    |  创建包含给定样本的频率分布|
 |fdist.inc(sample)         |   增加样本   |
 | fdist['monstrous']       |    计数给定样本出现的次数    |
@@ -190,7 +190,7 @@ def word_percentage(word,text):
 |fdist1 < fdist2|测试样本在fdist1 中出现的频率是否小于fdist2|
  
  
-####关于字符串的判断函数总结
+#### 关于字符串的判断函数总结
 
 | 函数        | 含义  |
 | --------   |------|
@@ -204,7 +204,7 @@ def word_percentage(word,text):
 | s.isdigit()| 	测试s是否非空，且s 中的所有字符都是数字| 
 | s.istitle()| 	测试s是否包含大小有区别的字符，且首字母大写（即，s中所有的词都首字母大写）|    
 
-####练习解答
+#### 练习解答
 
 - 17、
 
@@ -276,7 +276,7 @@ for w in l:
 题目可在[这里][1]访问
 
 
-####参考资料：
+#### 参考资料：
 
 
 - [Class FreqDist][2]
