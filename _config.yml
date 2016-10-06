@@ -38,7 +38,7 @@ bing_verify:
 timezone:    Asia/Shanghai
 future:      false  # publish future dated posts --  true, false (default) 
 highlighter: rouge
-#markdown:    kramdown
+markdown:    kramdown
 gems:
   - jekyll-sitemap
   - jekyll-paginate
@@ -54,24 +54,14 @@ permalink:   /:categories/:title/
 # Amount of post to show on home page
 paginate: 5
 
-#kramdown:
-#  input: GFM
-#  auto_ids: true
-#  footnote_nr: 1
-#  entity_output: as_char
-#  toc_levels: 1..6
-#  enable_coderay: false
-#####################
-pygments: true
-markdown: redcarpet
-redcarpet:
-  extensions:
-    - hard_wrap
-    - no_intra_emphasis
-    - autolink
-    - strikethrough
-    - fenced_code_blocks
-######################
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
 include: 
   - .htaccess
 exclude: 
