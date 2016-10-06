@@ -14,10 +14,12 @@ image:
 **Python 环境 ： NTLK**  
 ####  NTLK使用总结
 - 下载数据  
+
 ``` python
 >>>import nltk
 >>>nltk.download()
 ``` 
+
 - 使用下载文本
 ```python
 >>>from nltk.book import *
