@@ -193,7 +193,7 @@ def word_percentage(word,text):
 #### 关于字符串的判断函数总结
 
 | 函数        | 含义  |
-| --------   |------|
+| --------   |:------::|
 | s.startswith(t)| 	测试s是否以t 开头| 
 | s.endswith(t)| 	测试s是否以t 结尾| 
 | t in s| 	测试t是否是s的子串| 
