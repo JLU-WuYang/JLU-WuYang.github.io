@@ -170,7 +170,9 @@ def word_percentage(word,text):
 >>>text4.collocations()
 ```
 
+
 ####FreqDist总结
+
 
 | 例子        | 描述  |
 | --------   |------|
