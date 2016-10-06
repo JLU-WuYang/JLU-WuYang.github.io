@@ -10,9 +10,9 @@ image:
   creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 ---
 
-####**Module :   nltk.text**
+#### **Module :   nltk.text**
 
-####**File :   text.py**
+#### **File :   text.py**
 
 
 **一直更新中** 
@@ -367,3 +367,10 @@ import nltk.text_type
 text_type = str
 ```
 
+#### 参考资料：
+
+- [nltk.next源码][1]
+- [slice总结][2]
+
+[1]:http://www.nltk.org/_modules/nltk/text.html#Text
+[2]:http://shmilyaw-hotmail-com.iteye.com/blog/1782733
