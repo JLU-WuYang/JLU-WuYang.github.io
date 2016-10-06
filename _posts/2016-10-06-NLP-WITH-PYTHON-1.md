@@ -21,49 +21,68 @@ image:
 ``` 
 
 - 使用下载文本
+
 ```python
 >>>from nltk.book import *
 >>>text1
 <Text: Moby Dick by Herman Melville 1851>
 ```
+
 - 搜索文本
+
 ```python
 >>>text1.concordance("monstrous")
 ```
+
 - 出现在相似的上下文（即相似搭配中使用）
+
 ```python
 >>>text1.similar("monstrous")
 ```
+
 - 两个或两个以上的词共同的上下文
+
 ```python
 >>>text2.common_contexts(["monstrous","very"])
 be_glad  am _glad
 ```
+
 - 画离散图来判断词在文本中的位置（竖线为单词，行为整个文本）
+
 ```python
 #需安装Numpy的Matplotlib包
 >>>text4.dispersion_plot(["citizens","freedom"])
 ```
+
 ![dispersion_plot](../images/dispersion_plot.png)
 - 计数词汇
  
 1.统计词汇数（计入重复词汇）
+
 ```python
 >>>len(text1)
 ```
+
 2.统计词汇数（不计入重复的）
+
 ```python
 >>>len(set(text1))
 ```
+
 3.统计词汇项并排序
+
 ```python
 >>>sorted(set(text1))
 ```
+
 4.计数一个词在文本出现的次数
+
 ```python
 >>>text3.count("smote")
 ```
+
 5.测量文本词汇的丰富度（即每个字平均被使用的次数）
+
 ```python
 >>>len(text3)/len(set(text3))
 #写成函数
@@ -72,7 +91,9 @@ def lexical_diversity(text):
 #调用
 >>>lexical_diversity(text3)
 ```
+
 6.计数某个词占文本全部次数的百分比
+
 ```python
 >>>100*text4.count('a')/len(text4)
 #写成函数
@@ -81,13 +102,17 @@ def word_percentage(word,text):
 #调用
 >>>word_percentage('a',text4)
 ```
+
 7.找某词第一次出现的索引（位置）
+
 ```python
 #Text 可用下标访问 如text1[0]
 #Text 支持切片和迭代
 >>>text4.index('awaken')
 ```
+
 8.计算频率分布
+
 ```python
 #from nltk.book import *
 >>>fdist1=FreqDist(text1)
@@ -96,11 +121,14 @@ def word_percentage(word,text):
 >>>fdist1['whale']
 906
 ```
+
 9.绘制频率图
+
 ```python
 >>>fdist1.plot(50,cumulative=True)
 >>>fdist1.plot(50,cumulative=False)
 ```
+
 解释plot参数的含义
 **Parameters:**
 - **title (str)**- The title for the graph
@@ -111,22 +139,29 @@ def word_percentage(word,text):
 ![cumulative_True](../images/cumulative_True.png) ![cumulative_False](../images/cumulative_False.png)  
 
 10.通过长度和频度进行单词选择
+
 ```python
 >>>fdist5=FreqDist(text5)
 >>>sorted([w for w in set(text5) if len(w)>7 and fdist5[w]>7])
 ```
+
 11.搭配
+
 - 双连词
+
 ```python
 #from nltk import bigrams
 #并注意返回的是generator
 #可以用list()也可以用next()方法
 >>>list(bigrams(['more','is','said','than','done']))
 ```
+
 - 搭配（基本上是频繁的双连词）
+
 ```python
 >>>text4.collocations()
 ```
+
 ####FreqDist总结
 
 | 例子        | 描述  |
@@ -159,7 +194,9 @@ def word_percentage(word,text):
 | s.istitle()| 	测试s是否包含大小有区别的字符，且首字母大写（即，s中所有的词都首字母大写）|    
 
 ####练习解答
+
 - 17、
+
 ``` python
 >>>text9.index("sunset")
 >>>s=text9[600:650]
@@ -174,22 +211,30 @@ for i in example:
 """u' CHAPTER I THE TWO POETS OF SAFFRON PARK THE suburb of Saffron Park lay on the sunset side of London , as red and ragged as a cloud of sunset'
 """
 ```
+
 - 18、
+
 ```python
 sorted(set(sent1+sent2+sent3+sent4+sent5+sent6+sent7+sent8))
 """['!', ',', '-', '.', '1', '25', '29', '61', ':', 'ARTHUR', 'Call', 'Citizens', 'Dashwood', 'Fellow', 'God', 'House', 'I', 'In', 'Ishmael', 'JOIN', 'KING', 'MALE', 'Nov.', 'PMing', 'Pierre', 'Representatives', 'SCENE', 'SEXY', 'Senate', 'Sussex', 'The', 'Vinken', 'Whoa', '[', ']', 'a', 'and', 'as', 'attrac', 'been', 'beginning', 'board', 'clop', 'created', 'director', 'discreet', 'earth', 'encounters', 'family', 'for', 'had', 'have', 'heaven', 'in', 'join', 'lady', 'lol', 'long', 'me', 'nonexecutive', 'of', 'old', 'older', 'people', 'problem', 'seeks', 'settled', 'single', 'the', 'there', 'to', 'will', 'wind', 'with', 'years']"""
 ```
+
 - 22、
+
 ```python
 sorted(d.items(),key=lambda x:x[1],reverse=True)
 ```
+
 - 23、
+
 ```python
 l=[w for w in text6 if w.isupper()]
 for w in l:
         print w
 ```
+
 - 24、
+
 ```python
 >>> s=[w for w in text6 if w.endswith("ize")]
 >>> s
@@ -202,7 +247,9 @@ for w in l:
 [u'empty', u'aptly', u'Thpppppt', u'Thppt', u'Thppt', u'empty', u'Thppppt', u'temptress', u'temptation', u'ptoo', u'Chapter', u'excepting', u'Thpppt']
 >>> s=[w for w in text6 if w.istitle()]
 ```
+
 - 25、
+
 ```python
 >>> sent=['she','sells','sea','shells','by','the','sea','shore']
 >>> sent
@@ -214,8 +261,11 @@ for w in l:
 >>> s
 ['sells', 'shells', 'shore']
 ```
+
 题目可在[这里][1]访问
+
 ####参考资料：
+
 - [Class FreqDist][2]
 
 [1]:http://python.usyiyi.cn/documents/nltk_python/ch01.html
