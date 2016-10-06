@@ -9,10 +9,15 @@ image:
   credit: dargadgetz
   creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 ---
+
 ## NLP WITH PYTHON NOTEBOOK
+
 ### 第一章 语言处理与Python
+
 **Python 环境 ： NTLK**  
+
 ####  NTLK使用总结
+
 - 下载数据  
 
 ``` python
@@ -130,10 +135,13 @@ def word_percentage(word,text):
 ```
 
 解释plot参数的含义
+
 **Parameters:**
+
 - **title (str)**- The title for the graph
 - **cumulative** - A flag to specify whether the plot is cumulative (default = False)
 - **num (int)** - The maximum number of samples to plot (default=50). Specify num=0 to get all samples (slow).
+
 重点解释一下**cumulative**： 
 该参数指明是否累积，若为**True**则把samples的比例累加起来显示，频率图中不会显示单个词的比例，如下图左；若为**False**则显示会显示单个词的比例，如下图右；
 ![cumulative_True](../images/cumulative_True.png) ![cumulative_False](../images/cumulative_False.png)  
@@ -181,6 +189,7 @@ def word_percentage(word,text):
  
  
 ####关于字符串的判断函数总结
+
 | 函数        | 含义  |
 | --------   |------|
 | s.startswith(t)| 	测试s是否以t 开头| 
@@ -264,7 +273,9 @@ for w in l:
 
 题目可在[这里][1]访问
 
+
 ####参考资料：
+
 
 - [Class FreqDist][2]
 
