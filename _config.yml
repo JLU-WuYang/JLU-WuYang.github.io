@@ -38,7 +38,7 @@ bing_verify:
 timezone:    Asia/Shanghai
 future:      false  # publish future dated posts --  true, false (default) 
 highlighter: rouge
-markdown:    kramdown
+#markdown:    kramdown
 gems:
   - jekyll-sitemap
   - jekyll-paginate
@@ -61,7 +61,17 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
-
+#####################
+pygments: true
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks
+######################
 include: 
   - .htaccess
 exclude: 
