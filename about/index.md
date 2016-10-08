@@ -1,32 +1,54 @@
 ---
 layout: page
-title: About the Jekyll Theme
+title: About Me
 image:
   feature: abstract-5.jpg
   credit: dargadgetz
   creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 comments: false
-modified: 2016-02-01
+modified: 2016-10-8
 ---
 
-They say three times the charm, so here is another free responsive Jekyll blog theme for you. I've learned a ton since open sourcing my first two themes [on Github](http://github.com/mmistakes), and wanted to try a few new things this time around. 
+  欢迎你访问我的博客。 
+  
+  我是吴洋，英文名为 Albert。现在是吉林大学软件学院大三的一名学生。我喜欢编程，我认为编程是一项有趣的事，它让我用另一种视角去了解这个世界。我也喜欢文学和音乐。现在正在学习吉他，并对编曲有很大的兴趣。我的座右铭是做一个有趣的人，做一个有价值的人。现在我也正在努力。 
 
-If you've used any of [my other themes](http://mademistakes.com/work/jekyll-themes/) most of this should be familiar territory...
+ 闲话少叙，下面我介绍一下相关技术背景。 
+ 
+ 编程语言(以熟练度排序):
+ 
+ - Python
+ - Java
+ - C++/C
+ - html+CSS
+ - JavaScript
+ - Scala
+ 
+相关项目经历：
 
-## HPSTR Features:
+ - Python
+  - **bilibili爬虫（个人项目）**
+  我爬取了bilibili的一些用户信息和番剧信息，后续通过对数据的分析和处理，得到一个简易的分析报告，报告中说明了用户分析Top10，男女比例，地域分布等信息，文章发布在知乎文章中。
+  - **基于爬虫的番剧推荐系统（个人项目）**
+  根据上一个项目的番剧信息，和用户关注的番剧信息，我做出基于Flask框架实现的推荐系统，用户可以输入自身ID，得到推荐结果。并且我在该网站中还集成了视频下载功能。
+  - **基于爬虫的校内信息微博自动发布系统（个人项目）**
+  通过爬取校内通知的相关信息，用新浪微博SDK，发布到微博上。
+  - **爬取教务管理系统课程表脚本**
+ - Java 
+  - **JSP项目 图书管理系统（个人项目）**
+  - **JavaEE项目 疾病评分系统（团队项目）**
+  - **简易数据库（团队项目）**
+  - **任务调度模拟系统（团队项目）**
+ - C++
+  - **基于QT实现的餐厅订餐系统（团队项目）**
+ 
+科研经历：
 
-* Compatible with Jekyll 3 and GitHub Pages.
-* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
-* Gracefully degrades in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
-* Sweet animated menu.
-* Background image support.
-* Support for large images to call out your favorite posts.
-* Optional [Disqus](http://disqus.com) comments.
-* Simple and clear permalink structure[^1].
-* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
-* [Custom 404 page]({{ site.url }}/404.html) to get you started.
-* [Syntax highlighting]({{ site.url }}/code-highlighting-post/) stylesheets to make your code examples look snazzy.
+ - 机器学习
+ - NLP
+ 
+竞赛经历：
 
-<div markdown="0"><a href="{{ site.url }}/theme-setup/" class="btn btn-info">Theme Setup</a> <a href="https://github.com/mmistakes/hpstr-jekyll-theme" class="btn btn-success">Download HPSTR</a></div>
+ - 数学建模
 
-[^1]: Example: *domain.com/category-name/post-title*
+
