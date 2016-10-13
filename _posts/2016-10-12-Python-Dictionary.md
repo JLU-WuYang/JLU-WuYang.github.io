@@ -1,4 +1,4 @@
- ---
+---
 layout: post
 title: Python  Dictionary
 description: "介绍Python的数据结构Dictionary的使用"
