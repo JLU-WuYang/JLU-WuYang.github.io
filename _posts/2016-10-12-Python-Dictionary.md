@@ -381,7 +381,7 @@ print dic
 ### 参考资料：
 
 - [Python 官方文档-hash()][1]
-- [python 官方文档- __hash()__][5]
+- [python 官方文档-\__hash()\__][5]
 - [hash()方法介绍][2]
 - [Python id函数][3]
 - [Python Dictionary教程][4]
