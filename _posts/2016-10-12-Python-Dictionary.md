@@ -1,4 +1,4 @@
----
+ ---
 layout: post
 title: Python  Dictionary
 description: "介绍Python的数据结构Dictionary的使用"
@@ -12,7 +12,7 @@ image:
 
 ## Python 之 Dictionary
 
-### 创建Dictionary
+### 创建、访问、修改Dictionary
 
 字典中数据是用键值对方式（key: value）存储的。 
 
@@ -185,9 +185,213 @@ print lis[0]
 0
 ```
 
+### 删除字典元素
 
 
+```python
+dic ={1: 2, 3: 4}
+dic.clear()
+print dic
 
+#result
+{}
+```
+
+```python
+dic ={1: 2, 3: 4}
+del dic
+print dic
+
+#result
+"NameError: name 'dic' is not defined"
+```
+
+### 内置函数
+
+- **cmp(dict1, dict2)**  比较两个字典元素(为0时两者相等)
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  dic2 = {1: 2, 3: 2}
+  print cmp(dic1, dic2)
+  dic3 = {1: 2, 3: 4}
+  print cmp(dic1, dic3)
+  dic4 = {1: 2, 3: 5}
+  print cmp(dic1, dic4)
+  
+  #result
+  1
+  0
+  -1
+  ```
+  
+- **len(dict)**  计算字典元素个数，即键的总数
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  print len(dic1)
+  
+  #result
+  2
+  ```
+  
+- **str(dict)**  输出字典可打印的字符串表示。
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  print str(dic1)
+  
+  #result
+  {1: 2, 3: 4}
+  ```
+  
+- **dict.fromkeys(seq[, value]))**  创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值
+  
+  ```python
+  seq = ('name', 'age', 'sex')
+
+  dict = dict.fromkeys(seq)
+  print "New Dictionary : %s" %  str(dict)
+
+  dict = dict.fromkeys(seq, 10)
+  print "New Dictionary : %s" %  str(dict)
+  
+  #result
+  New Dictionary : {'age': None, 'name': None, 'sex': None}
+  New Dictionary : {'age': 10, 'name': 10, 'sex': 10}
+  ```
+  
+- **dict.get(key, default=None)** 返回指定键的值，如果值不在字典中返回default值
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  print dic1.get(1, 0)
+  print dic1
+  print dic1.get(8, 0)
+  print dic1
+  
+  #result
+  2
+  {1: 2, 3: 4}
+  0
+  {1: 2, 3: 4}
+  ```
+  
+- **dict.has_key(key)**  如果键在字典dict里返回true，否则返回false
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  print dic1.has_key(1)
+  print dic1.has_key(8)
+  
+  #result
+  True
+  False
+  ```
+
+- **dict.setdefault(key, default=None)**  和get()类似, 但如果键不存在于字典中，将会添加键并将值设为default
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  print dic1.setdefault(1, 0)
+  print dic1
+  print dic1.setdefault(8, 0)
+  print dic1
+  
+  #result
+  2
+  {1: 2, 3: 4}
+  0
+  {8: 0, 1: 2, 3: 4}
+  ```
+
+- **dict.items()**  以列表返回可遍历的(键, 值) 元组数组
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  print dic1.items()
+  
+  #result
+  [(1, 2), (3, 4)]
+  ```
+
+- **dict.keys()**  以列表返回一个字典所有的键
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  print dic1.keys()
+  
+  #result
+  [1, 3]
+  ```
+
+- **dict.values()**  以列表返回字典中的所有值
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  print dic1.values()
+   
+  result:
+  [2, 4]
+  ```
+
+- **dict.copy()**  	返回一个字典的浅复制
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  print dic1.copy()
+  
+  #result
+  {1: 2, 3: 4}
+  ```
+  
+- **dict.update(dict2)**  把字典dict2的键/值对更新到dict里
+
+  相同key，更新值  
+  
+  不同key，把dict中没有的键值对加上  
+  
+  dict改变，dict2不变
+  
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  dic2 = {4: 5}
+  dic1.update(dic2)
+  print dic1
+  print dic2
+  
+  #result
+  {1: 2, 3: 4, 4: 5}
+  {4: 5}
+  ```
+  
+  ```python
+  dic1 = {1: 2, 3: 4}
+  dic2 = {3: 5}
+  dic1.update(dic2)
+  print dic1
+  print dic2
+  
+  #result:
+  {1: 2, 3: 5}
+  {3: 5}
+  ```
+  
+### 参考资料：
+
+- [Python 官方文档-hash()][1]
+- [python 官方文档- __hash()__][5]
+- [hash()方法介绍][2]
+- [Python id函数][3]
+- [Python Dictionary教程][4]
+
+[1]:https://docs.python.org/2/library/functions.html#hash
+[2]:http://young-py.github.io/python/2015/06/23/python-2-02.html
+[3]:http://blog.csdn.net/djskl/article/details/25886187
+[4]:http://www.runoob.com/python/python-dictionary.html
+[5]:https://docs.python.org/2.7/reference/datamodel.html#object.__hash__
+  
 
 
 
