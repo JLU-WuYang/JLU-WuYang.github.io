@@ -38,8 +38,7 @@ TCP连接包括三个状态：连接创建、数据传送和连接终止。操�
 
 - 服务器
 
-
-```Python
+```python
 
 #server_1.py
 import socket
