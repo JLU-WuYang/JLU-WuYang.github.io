@@ -39,7 +39,6 @@ TCP连接包括三个状态：连接创建、数据传送和连接终止。操�
 - 服务器
 
 ```python
-
 #server_1.py
 import socket
 
@@ -67,9 +66,9 @@ while True:
     # 创建新线程来处理TCP连接:
     t = threading.Thread(target=tcplink, args=(sock, addr))
     t.start()
-
 ```
-  
+
+
 - 客户端
 
 ```python 
