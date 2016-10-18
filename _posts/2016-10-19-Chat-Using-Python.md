@@ -38,6 +38,7 @@ TCP连接包括三个状态：连接创建、数据传送和连接终止。操�
 
 - 服务器
 
+
 ```Python
 #server_1.py
 import socket
@@ -69,7 +70,7 @@ while True:
 
 ```
   
- - 客户端
+- 客户端
 
 ```python 
 #cilent_1.py
