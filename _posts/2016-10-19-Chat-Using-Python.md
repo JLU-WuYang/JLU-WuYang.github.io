@@ -89,8 +89,9 @@ for data in ['Michael', 'Tracy', 'Sarah']:
     print s.recv(1024)
 s.send('exit')
 s.close()
- ```
- 执行结果如下：
+```
+
+执行结果如下：
  <figure>
 	<img src="/images/client_1_server_1.png" alt="">
 </figure>
