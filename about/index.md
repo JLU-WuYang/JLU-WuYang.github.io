@@ -28,12 +28,24 @@ modified: 2016-10-8
 
 - Python
   - **校内搜索引擎** 
+  <figure>
+	<img src="/images/search.png" alt="">
+ </figure>
   - **bilibili爬虫（个人项目）**
   我爬取了bilibili的一些用户信息和番剧信息，后续通过对数据的分析和处理，得到一个简易的分析报告，报告中说明了用户分析Top10，男女比例，地域分布等信息，文章发布在知乎文章中。
   - **基于爬虫的番剧推荐系统（个人项目）**
   根据上一个项目的番剧信息，和用户关注的番剧信息，我做出基于Flask框架实现的推荐系统，用户可以输入自身ID，得到推荐结果。并且我在该网站中还集成了视频下载功能。
+  <figure>
+	<img src="/images/bilibili0.jpg" alt="">
+ </figure>
+ <figure>
+	<img src="/images/bilibili1.jpg" alt="">
+ </figure>
   - **基于爬虫的校内信息微博自动发布系统（个人项目）**
   通过爬取校内通知的相关信息，用新浪微博SDK，发布到微博上。
+  <figure>
+	<img src="/images/weibo.jpg" alt="">
+ </figure>
   - **爬取教务管理系统课程表脚本** 
   
 - Java 
