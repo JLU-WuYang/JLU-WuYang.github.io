@@ -27,7 +27,7 @@ modified: 2016-10-8
 相关项目经历：
 
 - Python
-  - **校内搜索引擎** 
+  - **校内搜索引擎（个人项目）** 
    <figure>
 	<img src="/images/search.png" alt="">
   </figure> 
