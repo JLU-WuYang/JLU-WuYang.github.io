@@ -40,18 +40,17 @@ modified: 2016-10-8
   <figure>
 	<img src="/images/bilibili0.png" alt="">
   </figure>
- 
   <figure>
 	<img src="/images/bilibili1.png" alt="">
   </figure>
  
-   - **基于爬虫的校内信息微博自动发布系统（个人项目）**
+  - **基于爬虫的校内信息微博自动发布系统（个人项目）**
     通过爬取校内通知的相关信息，用新浪微博SDK，发布到微博上。
     <figure>
 	<img src="/images/weibo.jpg" alt="">
     </figure>
  
-   - **爬取教务管理系统课程表脚本** 
+  - **爬取教务管理系统课程表脚本** 
   
 - Java 
   - **JSP项目 图书管理系统（个人项目）**
