@@ -22,7 +22,6 @@ modified: 2016-10-8
  - C++/C
  - html+CSS
  - JavaScript
- - Scala
  
 相关项目经历：
 
